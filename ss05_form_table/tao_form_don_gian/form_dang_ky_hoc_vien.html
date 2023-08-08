@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form sinh viên</title>
+</head>
+<style>
+    .main2 {
+        background-color: navajowhite;
+    }
+    .regis {
+        color: blue;
+        background-color: lightblue;
+    }
+</style>
+<body>
+
+<div class="main2">
+    <form action="   " method="get">
+        <div class="regis"><h2>Đăng Ký Học Viên</h2></div>
+        <table>
+            <tr>
+                <td><label for="fullname" style="color: rgb(54, 57, 231)">Họ Và Tên</label></td>
+                <td><input type="text" name="fullname" id="fullname" placeholder="Nguyễn Văn A"></td>
+            </tr>
+
+            <tr>
+                <td><label for="date" style="color: rgb(54, 57, 231)">Ngày Sinh</label></td>
+                <td><input type="text" name="date" id="date" placeholder="dd/mm/yyyy"></td>
+            </tr>
+
+            <tr>
+                <td style="color: rgb(54, 57, 231)">Giới Tính</td>
+                <td>
+                    <input type="radio" name="gender">Nam
+                    <input type="radio" name="gender">Nữ
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="textarea" style="color: rgb(54, 57, 231)">Địa Chỉ</label></td>
+                <td><textarea name="text" id="textarea" cols="16" rows="3"></textarea></td>
+            </tr>
+
+            <tr>
+                <td style="color: rgb(54, 57, 231)">Lớp</td>
+                <td>
+                    <select name="class">
+                        <option selected>--Chọn Lớp--</option>
+                        <option>Lớp 1</option>
+                        <option>Lớp 2</option>
+                        <option>Lớp 3</option>
+                        <option>Lớp 4</option>
+                        <option>Lớp 5</option>
+                        <option>Lớp 6</option>
+                        <option>Lớp 7</option>
+                        <option>Lớp 8</option>
+                        <option>Lớp 9</option>
+                        <option>Lớp 10</option>
+                        <option>Lớp 11</option>
+                        <option>Lớp 12</option>
+                        <option>Khác</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="email" style="color: rgb(54, 57, 231)">Email</label></td>
+                <td><input type="text" id="email" placeholder="example@gmail.com"></td>
+            </tr>
+
+            <tr>
+                <td><label for="phone" style="color: rgb(54, 57, 231)">Số Điện Thoại</label></td>
+                <td><input type="text" id="phone" placeholder="0123456789"></td>
+            </tr>
+        </table>
+        <br>
+        <div class="button2">
+            <input type="submit" value="Đăng Ký">
+            <input type="reset" value="Nhập Lại">
+        </div>
+    </form>
+</div>
+</body>
+</html>

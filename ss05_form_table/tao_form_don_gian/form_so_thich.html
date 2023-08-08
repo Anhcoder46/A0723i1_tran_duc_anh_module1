@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form sở thích</title>
+    <style>
+        .sothich {
+            color: white;
+            background-color: orangered;
+            text-align: center;
+        }
+        .name {
+            color: blue;
+            background-color: lightblue;
+        }
+        .hobby {
+            color: darkorange;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <form action="  " method="get">
+        <h1><div class="sothich">Sở thích của bạn</div></h1>
+        <div class="name">
+            <table>
+                <tr>
+                    <td><label for="fullname" >Họ và tên:</label></td>
+                    <td><input type="text" name="fullname" id="fullname" placeholder="Your name"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="Email">Email:</label></td>
+                    <td><input type="text" name="Email" id="Email" placeholder="email"></td>
+                </tr>
+
+                <tr>
+                    <td>Sở thích:</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="hobby">
+            <table>
+                <tr>
+                    <td><input type="checkbox" name="hobby">Thể Thao</td>
+                    <td><input type="checkbox" name="hobby">Âm Nhạc</td>
+                    <td><input type="checkbox" name="hobby">Đọc sách</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="hobby">Lướt web</td>
+                    <td><input type="checkbox" name="hobby">Chơi game</td>
+                    <td><input type="checkbox" name="hobby">Điện ảnh</td>
+                </tr>
+
+                    <td><input type="checkbox" name="hobby">Du Lịch</td>
+
+            </table>
+
+            <div class="nut">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
