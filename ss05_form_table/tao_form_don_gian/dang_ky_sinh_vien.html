@@ -4,30 +4,31 @@
     <title>Form sinh viên</title>
 </head>
 <style>
-    .main2 {
-        background-color: navajowhite;
+    .main1 {
+        background-color: sandybrown;
+        padding: 10px;
     }
-    .regis {
+    .main2 {
         color: blue;
         background-color: lightblue;
     }
 </style>
 <body>
 
-<div class="main2">
+<div class="main1" style="width: 300px">
     <form action="   " method="get">
-        <div class="regis"><h2>Đăng Ký Học Viên</h2></div>
+        <div class="main2">
+            <h1 style="margin-top: 0px">Đăng Ký Học Viên</h1>
+        </div>
         <table>
             <tr>
                 <td><label for="fullname" style="color: rgb(54, 57, 231)">Họ Và Tên</label></td>
-                <td><input type="text" name="fullname" id="fullname" placeholder="Nguyễn Văn A"></td>
+                <td><input type="text" name="fullname" id="fullname"></td>
             </tr>
-
             <tr>
                 <td><label for="date" style="color: rgb(54, 57, 231)">Ngày Sinh</label></td>
-                <td><input type="text" name="date" id="date" placeholder="dd/mm/yyyy"></td>
+                <td><input type="text" name="date" id="date"></td>
             </tr>
-
             <tr>
                 <td style="color: rgb(54, 57, 231)">Giới Tính</td>
                 <td>
@@ -35,12 +36,10 @@
                     <input type="radio" name="gender">Nữ
                 </td>
             </tr>
-
             <tr>
                 <td><label for="textarea" style="color: rgb(54, 57, 231)">Địa Chỉ</label></td>
                 <td><textarea name="text" id="textarea" cols="16" rows="3"></textarea></td>
             </tr>
-
             <tr>
                 <td style="color: rgb(54, 57, 231)">Lớp</td>
                 <td>
@@ -62,15 +61,14 @@
                     </select>
                 </td>
             </tr>
-
             <tr>
                 <td><label for="email" style="color: rgb(54, 57, 231)">Email</label></td>
-                <td><input type="text" id="email" placeholder="example@gmail.com"></td>
+                <td><input type="text" id="email"></td>
             </tr>
 
             <tr>
                 <td><label for="phone" style="color: rgb(54, 57, 231)">Số Điện Thoại</label></td>
-                <td><input type="text" id="phone" placeholder="0123456789"></td>
+                <td><input type="text" id="phone"></td>
             </tr>
         </table>
         <br>
