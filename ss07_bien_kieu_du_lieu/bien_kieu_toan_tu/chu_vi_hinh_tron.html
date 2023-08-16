@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tinh chu vi hinh tron</title>
+</head>
+<body>
+<h1>Tính chu vi hình tròn</h1>
+<label>Bán kính:</label>
+<input type="number" id="ban_kinh"><br><br/>
+<button onclick="result()">Tính</button><br><br/>
+<label>Chu vi:</label>
+<span id="chu_vi"></span>
+<script>
+    function result() {
+        let r = parseFloat(document.getElementById("ban_kinh").value);
+        let chu_vi = 2  * Math.PI * r;
+        document.getElementById("chu_vi").innerHTML = chu_vi;
+    }
+</script>
+</body>
+</html>

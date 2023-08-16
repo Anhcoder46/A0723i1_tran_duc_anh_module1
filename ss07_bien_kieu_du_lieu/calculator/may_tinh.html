@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+<div class="calculator">
+    <form>
+        <input type="text" id="input1" placeholder="Number 1">
+        <input type="text" id="input2" placeholder="Number 2">
+        <br>
+        <button type="button" onclick="document.getElementById('operator').value = '+'">Addition(+)</button>
+        <button type="button" onclick="document.getElementById('operator').value = '-'">Subtraction(-)</button>
+        <button type="button" onclick="document.getElementById('operator').value = '*'">Multiplication(*)</button>
+        <button type="button" onclick="document.getElementById('operator').value = '/'">Division(/)</button>
+        <br>
+        <input type="hidden" id="operator" name="operator">
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+    <p id="result"></p>
+</div>
+<script>
+    function calculate() {
+        let input1 = parseFloat(document.getElementById("input1").value);
+        let input2 = parseFloat(document.getElementById("input2").value);
+        let operator = document.getElementById('operator').value;
+        let result;
+        switch (operator) {
+            case "+":
+                result = input1 + input2;
+                break;
+            case "-":
+                result = input1 - input2;
+                break;
+            case "*":
+                result = input1 * input2;
+                break;
+            case "/":
+                result = input1 / input2;
+                break;
+        }
+        document.getElementById("result").innerHTML = "Kết quả: " + result;
+    }
+</script>
+</body>
+</html>

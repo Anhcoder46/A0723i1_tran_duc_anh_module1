@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            width: 30%;
+        }
+        table, th, td {
+            border: 2px solid black;
+        }
+        td, th {
+            width: 15%;
+            height: 30px;
+        }
+        button {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="7" id="display"></th>
+    </tr>
+    <tr>
+        <td onclick="ra('Math.ra')"><button type="button">Rad</button></td>
+        <td onclick="cha('')"><button type="button">...</button></td>
+        <td onclick="xt('Math.x!')"><button type="button">x!</button></td>
+        <td onclick="mn()"><button type="button">(</button></td>
+        <td onclick="dn()"><button type="button">)</button></td>
+        <td onclick="per()"><button type="button">%</button></td>
+        <td onclick="del()"><button type="button">AC</button></td>
+    </tr>
+    <tr>
+        <td onclick="inv('Math.inv')"><button type="button">Inv</button></td>
+        <td onclick="si('Math.sin(')"><button type="button">Sin</button></td>
+        <td onclick="ins('Math.in')"><button type="button">In</button></td>
+        <td onclick="n7()"><button type="button">7</button></td>
+        <td onclick="n8()"><button type="button">8</button></td>
+        <td onclick="n9()"><button type="button">9</button></td>
+        <td onclick="chia()"><button type="button">/</button></td>
+    </tr>
+    <tr>
+        <td onclick="pi('Math.PI')"><button type="button">π</button></td>
+        <td onclick="co('Math.cos(')"><button type="button">Cos</button></td>
+        <td onclick="lo('Math.log(')"><button type="button">Log</button></td>
+        <td onclick="n4()"><button type="button">4</button></td>
+        <td onclick="n5()"><button type="button">5</button></td>
+        <td onclick="n6()"><button type="button">6</button></td>
+        <td onclick="nhan()"><button type="button">*</button></td>
+    </tr>
+    <tr>
+        <td onclick="et('Math.E')"><button type="button">e</button></td>
+        <td onclick="ta('Math.tan(')"><button type="button">Tan</button></td>
+        <td onclick="sqr('Math.sqrt')"><button type="button">√</button></td>
+        <td onclick="n1()"><button type="button">1</button></td>
+        <td onclick="n2()"><button type="button">2</button></td>
+        <td onclick="n3()"><button type="button">3</button></td>
+        <td onclick="tru()"><button type="button">-</button></td>
+    </tr>
+    <tr>
+        <td onclick="an('Math.ans')"><button type="button">Ans</button></td>
+        <td onclick="ex('Math.EXP(')"><button type="button">EXP</button></td>
+        <td onclick="po('Math.pow(')"><button type="button">x^y</button></td>
+        <td onclick="n0()"><button type="button">0</button></td>
+        <td onclick="cham()"><button type="button">.</button></td>
+        <td onclick="resultCal()"><button type="button" style="background: #0e3cfe; color: white">=</button></td>
+        <td onclick="cong()"><button type="button">+</button></td>
+    </tr>
+</table>
+<script>
+    function resultCal() {
+        let a = document.getElementById("display").innerText;
+        document.getElementById("display").innerText = eval(a);
+    }
+    function cong() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "+";
+        document.getElementById("display").innerHTML = b;
+    }
+    function tru() {
+        let a = document.getElementById("display").innerText;
+        let b =  a + "-";
+        document.getElementById("display").innerHTML= b;
+    }
+    function nhan() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "*";
+        document.getElementById("display").innerHTML = b;
+    }
+    function chia() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "/";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n0() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "0";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n1() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "1";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n2() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "2";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n3() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "3";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n4() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "4";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n5() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "5";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n6() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "6";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n7() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "7";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n8() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "8";
+        document.getElementById("display").innerHTML = b;
+    }
+    function n9() {
+        let a = document.getElementById("display").innerText;
+        let b = a + "9";
+        document.getElementById("display").innerHTML = b;
+    }
+    function cham() {
+        let a = document.getElementById("display").innerText;
+        let b = a + ".";
+        document.getElementById("display").innerHTML = b;
+    }
+    function del() {
+        document.getElementById("display").innerHTML = "";
+    }
+</script>
+</body>
+</html>

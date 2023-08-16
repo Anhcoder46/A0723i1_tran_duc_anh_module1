@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tinh dien tich hinh tron</title>
+</head>
+<body>
+<h1>Tính diện tích hình tròn</h1>
+<label>Bán kính:</label>
+<input type="number" id="ban_kinh"><br><br/>
+<button onclick="result()">Tính</button><br><br/>
+<label>Diện tích:</label>
+<span id="dien_tich"></span>
+<script>
+    function result() {
+        let r = parseFloat(document.getElementById("ban_kinh").value);
+        let dien_tich =Math.PI * r * r;
+        document.getElementById("dien_tich").innerHTML = dien_tich;
+    }
+</script>
+</body>
+</html>
