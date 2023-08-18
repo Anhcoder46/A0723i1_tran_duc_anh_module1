@@ -6,50 +6,49 @@
 <body>
 <h1>Chuyển đổi tiền tệ</h1>
 <table>
-<tr>
-    <th><label>Amount</label></th>
-    <th><label>From Currency</label></th>
-    <th><label>To Currency</label></th>
-    <th></th>
-</tr>
-<tr>
-    <td><input type="text" id="amount"></td>
-    <td>
-        <select id="fromCurrency">
-            <option value="VND">VND</option>
-            <option value="USD">USD</option>
-        </select>
-    </td>
+    <tr>
+        <th><label>Amount</label></th>
+        <th><label>From Currency</label></th>
+        <th><label>To Currency</label></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="amount"></td>
+        <td>
+            <select id="fromcurrency">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </td>
 
-    <td>
-        <select id="toCurrency">
-            <option value="USD">USD</option>
-            <option value="VND">VND</option>
-        </select>
-    </td>
-    <td><button onclick="convert()">Convert</button></td>
-</tr>
+        <td>
+            <select id="tocurrency">
+                <option value="USD">USD</option>
+                <option value="VND">VND</option>
+            </select>
+        </td>
+        <td><button onclick="convert()">Convert</button></td>
+    </tr>
 </table>
-<p id="Result"></p>
+<p id="result"></p>
 <script>
     function convert() {
         let amount = document.getElementById("amount").value;
-        let formCurrency = document.getElementById("fromCurrency").value;
-        let toCurrency = document.getElementById("toCurrency").value;
-        if (formCurrency == "USD" && toCurrency == "VND") {
-            Result = "Result: " + (amount * 23975) + " Đ";
+        let formcurrency = document.getElementById("fromcurrency").value;
+        let tocurrency = document.getElementById("tocurrency").value;
+        if (formcurrency == "USD" && tocurrency == "VND") {
+            result = "Result: " + (amount * 24000) + " Đ";
         }
-        else if (formCurrency == "VND" && toCurrency =="USD") {
-            Result = "Result: "+ (amount / 23975) + " $";
+        else if (formcurrency == "VND" && tocurrency =="USD") {
+            result = "Result: "+ (amount / 24000) + " $";
         }
-        else if (formCurrency == "VND") {
-            Result = "Result: " + amount + " Đ";
+        else if (formcurrency == "VND") {
+            result = "Result: " + amount + " Đ";
         } else {
-            Result = "Result: " + amount + " $";
+            result = "Result: " + amount + " $";
         }
-        document.getElementById("Result").innerHTML = Result;
+        document.getElementById("result").innerHTML = result;
     }
-
 </script>
 </body>
 </html>
