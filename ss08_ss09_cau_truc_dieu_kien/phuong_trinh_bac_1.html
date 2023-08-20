@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<h1>Giải phương trình bậc 1</h1>
+<label>Nhập hệ số a</label>
+<input type="number" id="heSoA"><br><br/>
+<label>Nhập hằng số b</label>
+<input type="number" id="heSoB"><br><br/>
+<button onclick="giaiPhuongTrinh()">Giải</button>
+<p id="ketQua"></p>
+<script>
+    function giaiPhuongTrinh() {
+        let heSoA = parseFloat(document.getElementById("heSoA").value);
+        let heSoB = parseFloat(document.getElementById("heSoB").value);
+
+        if (heSoA == 0 && heSoB == 0) {
+            document.getElementById("ketQua").innerHTML = "Phương trình vô số nghiệm";
+        } else if (heSoA == 0 && heSoB != 0) {
+            document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+        } else {
+            let x = -heSoB / heSoA;
+            document.getElementById("ketQua").innerHTML = "Nghiệm của phương trình là: " + x;
+        }
+    }
+</script>
+</body>
+</html>

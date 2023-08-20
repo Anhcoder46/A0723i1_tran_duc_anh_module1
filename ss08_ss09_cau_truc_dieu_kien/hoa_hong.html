@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+
+<label for="sales">Nhập doanh số</label>
+<input type="number" id="sales"><br><br/>
+
+<button onclick="lai()">Tính hoa hồng</button>
+<br>
+<span id="result"></span>
+<script>
+    function lai() {
+        let sales = parseFloat(document.getElementById('sales').value);
+        let hoaHong;
+        if (sales >= 100000000) {
+            hoaHong = sales * 0.20;
+        }
+        else if (sales >= 10000000) {
+            hoaHong = sales * 0.15;
+        }
+        else if (sales >= 5000000) {
+            hoaHong = sales * 0.05;
+        }
+        else {
+            hoaHong = 0;
+        }
+        document.getElementById('result').innerHTML = "Hoa hồng nhận được là: " + hoaHong + " Đ";
+    }
+</script>
+</body>
+</html>
