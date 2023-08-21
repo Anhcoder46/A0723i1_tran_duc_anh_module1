@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bảng cửu chương</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Bảng cửu chương</h1>
+<table border="">
+    <script>
+        for (var i = 1; i <= 10; i++) {
+            document.write("<tr>");
+            for (var j = 1; j <= 9; j++) {
+                if (j == 1) {
+                    document.write();
+                }
+                document.write("<td>" + (j + " x "  + i + " = ") + i * j + "</td>");
+            }
+            document.write();
+        }
+    </script>
+</table>
+</body>
+</html>
