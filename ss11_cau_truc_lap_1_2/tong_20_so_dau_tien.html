@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    let a = 0;
+    let b = 1;
+    let n;
+    let m = 1;
+
+    for (let i = 2; i < 20; i++) {
+        n = a + b;
+        a = b;
+        b = n;
+        m += n;
+    }
+    alert(m);
+
+</script>
+</body>
+</html>
