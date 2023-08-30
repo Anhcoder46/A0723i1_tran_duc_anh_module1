@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<h1>Tính giai thừa</h1>
+<input type="number" id="input">
+<button onclick="checkKetQua()">Tính</button>
+<p id="ketqua"></p>
+</body>
+<script>
+    function checkKetQua() {
+        let a = parseInt(document.getElementById('input').value);
+        let giaiThua = 1;
+        for (let i = 1; i <= a; i++) {
+            giaiThua *= i;
+        }
+        document.getElementById("ketqua").innerHTML = "Giai thừa của " + a + "! là: " + giaiThua;
+    }
+</script>
+</html>
