@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm</title>
+</head>
+<body>
+<script>
+    let arr = new Array(10);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập phần tử Arr[" + i + "] =");
+    }
+    document.write("Array:" + arr + "<br>");
+    let V = +prompt("Nhập giá trị cần tìm kiếm: ");
+    let index = 0;
+    let flag = false;
+    for (let j = 0; j < arr.length; j++) {
+        if (arr[j] == V) {
+            index = j;
+            flag = true;
+            break;
+        }
+    }
+    if (flag == true) {
+        document.write(V + " xuất hiện tại vị trí " + index);
+    } else
+        document.write(V + " không xuất hiện trong mảng");
+</script>
+</body>
+</html>

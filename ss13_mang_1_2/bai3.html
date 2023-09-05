@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let max = +prompt("Nhập phần tử Arr[]: ");
+    let array = [];
+    let total = 0;
+    let arrayMax = 0;
+    let S = 0;
+    for (let i = 0; i < max; i++) {
+        array[i] = +prompt("Nhập số nguyên vào mảng: " + i);
+    }
+    for (let i = 0; i < array.length; i++) {
+        if (arrayMax < array[i]) {
+            arrayMax = array[i];
+        }
+    }
+    for ( let i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+    S = total / array.length;
+    document.write("Phần tử có giá trị lớn nhất là: " + arrayMax + "<br>");
+    document.write("Gía trị trung bình của mảng là: " + S);
+</script>
+</body>
+</html>

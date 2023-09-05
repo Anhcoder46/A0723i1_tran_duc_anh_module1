@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng đảo ngược</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập số phần tử của mang")
+    let arr = new Array(n);
+    let i;
+    let first = 0;
+    let last = arr.length - 1;
+    for (i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập phần tử Arr[" + i + "] = ");
+    }
+    document.write("Mảng khởi tạo:" + arr + "<br>");
+    while (first < last) {
+        let b = arr[first]
+        arr[first] = arr[last];
+        arr[last] = b;
+        first++;
+        last--;
+    }
+    document.write("Mảng sau khi đảo ngược là: " + arr);
+</script>
+
+</body>
+</html>

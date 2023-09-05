@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAX in arr</title>
+</head>
+<body>
+<script>
+    let arr = new Array(10);
+    let i;
+    for (i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập phần tử Arr[" + i + "] =");
+    }
+    let max = arr[0];
+    let index = 0;
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            index = i;
+        }
+    }
+    document.write("Mảng arr " + arr  +" có phần tử lớn nhất là: " +max + " tại vị trí index = " + index);
+
+</script>
+
+</body>
+</html>

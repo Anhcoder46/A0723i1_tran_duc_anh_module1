@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+
+</head>
+<body>
+<script>
+    let a = prompt("Input String");
+    let b = new Array();
+    let temp;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] >= 'A' && a <= 'Z') {
+            temp = a[i];
+            // alert(temp)
+            b[i] = temp.toLowerCase();
+        }
+        if (a[i] >= 'a' && a <= 'z') {
+            b[i] = a[i].toUpperCase();
+        }
+
+    }
+    document.write(b.join(""));
+
+</script>
+</body>
+</html>
