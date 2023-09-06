@@ -6,11 +6,12 @@
 </head>
 <body>
 <script>
-    let arr = new Array(10);
+    let n = +prompt("Nhập chiều dài mảng: ");
+    let arr = new Array(n);
     for (let i = 0; i < arr.length; i++) {
         arr[i] = +prompt("Nhập phần tử Arr[" + i + "] =");
     }
-    document.write("Array:" + arr + "<br>");
+    document.write("Array: " + arr + "<br>");
     let V = +prompt("Nhập giá trị cần tìm kiếm: ");
     let index = 0;
     let flag = false;
@@ -22,9 +23,9 @@
         }
     }
     if (flag == true) {
-        document.write(V + " xuất hiện tại vị trí " + index);
+        document.write(V + " is in the array " + index);
     } else
-        document.write(V + " không xuất hiện trong mảng");
+        document.write(V + " is not in the array");
 </script>
 </body>
 </html>

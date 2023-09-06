@@ -6,10 +6,11 @@
 </head>
 <body>
 <script>
-    let arr = new Array(10);
+    let n = parseInt(prompt("Nhập chiều dài mảng: "));
+    let arr = new Array(n);
     let i;
     for (i = 0; i < arr.length; i++) {
-        arr[i] = +prompt("Nhập phần tử Arr[" + i + "] =");
+        arr[i] = +prompt("Nhập phần tử Arr[" + i + "] = ");
     }
     let max = arr[0];
     let index = 0;
@@ -19,9 +20,8 @@
             index = i;
         }
     }
-    document.write("Mảng arr " + arr  +" có phần tử lớn nhất là: " +max + " tại vị trí index = " + index);
+    document.write("Mảng arr " + arr  +" có phần tử lớn nhất là: " + max + " tại vị trí index = " + index);
 
 </script>
-
 </body>
 </html>
