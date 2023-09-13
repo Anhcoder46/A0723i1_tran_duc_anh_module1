@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lương nhân viên</title>
+</head>
+<body>
+<label for="sales">Lương nhân viên:</label>
+<input type="number" id="sales">
+<br><br>
+<button type="button" onclick="calculateSalary()">Tính lương:</button>
+<br><br>
+<p id="result"></p>
+<script>
+    function calculateSalary() {
+        let sales = parseInt(document.getElementById('sales').value)
+        let salary;
+        if (sales >= 15000000) {
+            salary = sales * 0.2;
+            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
+        } else if (sales >= 7000000) {
+            salary = sales * 0.1;
+            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
+        } else {
+            salary = sales * 0.05;
+            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
+        }
+    }
+</script>
+</body>
+</html>

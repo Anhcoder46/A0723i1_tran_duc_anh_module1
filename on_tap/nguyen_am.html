@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra ký tự nguyên âm</title>
+</head>
+<body>
+<label for="character">Nhập 1 ký tự:</label>
+<input type="text" id="character"><br><br>
+<button onclick="checkVowel()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+    function checkVowel() {
+        var character = document.getElementById('character').value;
+        // chuỗi chứa các ký tự nguyên âm
+        var vowel = "aeiouAEIOU";
+        // kiểm tra ký tự vào có phải là nguyên âm hay ko
+        if (vowel.indexOf(character) !== -1) {
+            document.getElementById('result').innerHTML = "Ký tự " + character + " là nguyên âm";
+        } else {
+            document.getElementById('result').innerHTML = "Ký tự " + character + " là phụ âm";
+        }
+    }
+</script>
+</body>
+</html>

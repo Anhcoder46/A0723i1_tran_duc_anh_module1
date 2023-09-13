@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác cân đặc</title>
+</head>
+<body>
+<div id="row"></div>
+<script>
+    let h = 5;
+    let row = "";
+    for (let i = 1; i <= h; i++) {
+        for (let j = 1; j <= h - i; j++) {
+            row += "&nbsp;&nbsp";
+        }
+        for (let k = 1; k <= 2 * i - 1; k++) {
+            row += "*";
+        }
+        row += "<br>";
+    }
+    document.getElementById('row').innerHTML = row;
+</script>
+</body>
+</html>
