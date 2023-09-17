@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt thức uống</title>
+</head>
+<body>
+<p>Xin chào quý khách! Chúng tôi xin chân thành cảm ơn vì đã lựa chọn đến và gọi món tại cửa hàng của chúng tôi.</p>
+<p>Hy vọng quý khách đã có một trải nghiệm thú vị và hài lòng với dịch vụ của chúng tôi.</p>
+<p>Khi quý khách đã hoàn thành và gọi xong món, chúng tôi mong rằng quý khách đã tận hưởng món ăn và cảm thấy hài lòng với chất lượng và phục vụ của chúng tôi.</p>
+<p>Chúng tôi rất mong được đón tiếp quý khách trở lại trong tương lai gần.</p>
+<p>Nếu quý khách có bất kỳ câu hỏi, ý kiến hoặc đề xuất nào, xin hãy để lại cho chúng tôi biết.</p>
+<p>Chúng tôi luôn sẵn lòng lắng nghe và cải thiện dịch vụ để mang lại trải nghiệm tốt nhất cho quý khách.</p>
+<p>Chúc quý khách có một ngày vui vẻ và tràn đầy năng lượng. Xin chào và hẹn gặp lại quý khách!</p>
+<script>
+    let choice; // sự lựa chọn
+    let total = 0; // tổng
+    // quantity: số lượng
+    do {
+        choice = parseInt(prompt("Vui lòng chọn thức uống (nhập số từ 1 đến 7): \n" +
+            "1. Cafe                          -        15.000đ/cốc \n" +
+            "2. Cam vắt                    -        25.000đ/cốc \n" +
+            "3. Nước ép cà rốt         -        30.000đ/cốc \n" +
+            "4. Nước ép cà chua      -        30.000đ/cốc \n" +
+            "5. Nước lọc                   -        8.000đ/cốc \n" +
+            "6. Nước dừa                 -        35.000đ/cốc \n" +
+            "7. Quý khách có muốn gọi gọi gì thêm nữa không!"));
+        switch (choice) {
+            case 1:
+                let quantity1 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc cafe?"));
+                total += quantity1 * 15000;
+                break;
+            case 2:
+                let quantity2 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc cam vắt?"));
+                total += quantity2 * 25000;
+                break;
+            case 3:
+                let quantity3 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc nước ép cà rốt?"));
+                total += quantity3 * 30000;
+                break;
+            case 4:
+                let quantity4 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc nước ép cà chua?"));
+                total += quantity4 * 30000;
+                break;
+            case 5:
+                let quantity5 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc nước lọc?"));
+                total += quantity5 * 8000;
+                break;
+            case 6:
+                let quantity6 = parseInt(prompt("Bạn muốn đặt bao nhiêu cốc nước dừa?"));
+                total += quantity6 * 35000;
+                break;
+            case 7:
+                alert("Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!");
+                break;
+            default:
+                alert("Thức uống không hợp lệ. Vui lòng chọn lại từ 1 đến 6.");
+        }
+    }
+    while (choice != 7)
+    alert("Tổng số tiền bạn cần phải trả: " + total + "đ.");
+</script>
+</body>
+</html>

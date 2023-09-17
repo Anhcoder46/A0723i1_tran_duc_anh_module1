@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng A và B</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    function check() {
+        let a = [];
+        let b = [];
+
+        let aLength = +prompt("Nhập số phần tử mảng A");
+        for (let i = 0; i < aLength; i++) {
+            let element = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng A");
+            a.push(element);
+        }
+
+        let bLength = +prompt("Nhập số phần tử mảng B");
+        for (let i = 0; i < bLength; i++) {
+            let element = +prompt("Nhập phần tử thứ " + (i + 1) + " của mảng B");
+            b.push(element);
+        }
+
+        let c = [];
+        let count = {};
+
+        for (let i = 0; i < a.length; i++) {
+            if (count[a[i]] === undefined) {
+                count[a[i]] = 1;
+            } else {
+                count[a[i]]++;
+            }
+        }
+
+        for (let i = 0; i < b.length; i++) {
+            if (count[b[i]] === undefined && c.indexOf(b[i]) === -1) {
+                c.push(b[i]);
+            }
+        }
+
+        c.sort(function (a, b) {
+            return a - b;
+        });
+
+        document.getElementById("result").innerHTML = "Các phần tử xuất hiện trong mảng B nhưng không xuất hiện trong mảng A là: " + c;
+    }
+
+    check();
+</script>
+</body>
+
+</html>
