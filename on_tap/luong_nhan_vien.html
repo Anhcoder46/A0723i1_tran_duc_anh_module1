@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tính lương nhân viên</title>
+    <title>Tính Thuế TNCN</title>
 </head>
 <body>
-<label for="sales">Lương nhân viên:</label>
-<input type="number" id="sales">
-<br><br>
-<button type="button" onclick="calculateSalary()">Tính lương:</button>
-<br><br>
-<p id="result"></p>
 <script>
-    function calculateSalary() {
-        let sales = parseInt(document.getElementById('sales').value)
-        let salary;
-        if (sales >= 15000000) {
-            salary = sales * 0.2;
-            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
-        } else if (sales >= 7000000) {
-            salary = sales * 0.1;
-            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
-        } else {
-            salary = sales * 0.05;
-            document.getElementById('result').innerHTML = "Số lương được nhận là: " + salary;
-        }
+    let salary = parseInt(prompt("Nhập tiền lương (triệu): ")); //salary là lương
+    let tax = 0; //tax là thuế
+    let net;
+    if( salary > 15000000) {
+        tax = salary * 0.2;
     }
+    else if( salary > 7000000) {
+        tax = salary * 0.1;
+    }
+    else {
+        tax = salary * 0.05;
+    }
+    net = salary - tax;
+    document.write("Lương của bạn: " + salary + "<br>");
+    document.write("Thuế thu nhập cá nhân của bạn là: " + tax + "<br>");
+    document.write("Lương được nhận sau thuế của bạn là: " + net + "<br>");
 </script>
 </body>
 </html>
