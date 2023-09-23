@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển hóa xâu ký tự</title>
+</head>
+<body>
+<script>
+    function main() {
+        let kiTu = prompt("Nhập vào chuỗi ký tự");
+        document.write("Xâu trước chuẩn hóa là:" + kiTu);
+        document.write("</br>Xâu đã chuẩn hóa là: " + chuanHoaXau(kiTu));
+        document.write("</br>Từ dài nhất là: " + timTuDaiNhat(kiTu));
+    }
+    main();
+
+    function chuanHoaXau(str) {
+        let a = str.split(" ");
+        //Phương thức split("") để tách chuỗi thành 1 mảng các chuỗi con bởi khoảng trắng
+        for(let i = 0; i < a.length; i++) {
+            let word = a[i].toLowerCase();
+            // toLowerCase để chuyển đổi chuỗi con trong mảng thành chữ thường
+            word = word.charAt(0).toUpperCase() + word.slice(1);
+            // charAt lấy về ký tự thứ i trong chuỗi
+            // toUpperCase để chuyển chữ cái đầu tiên trong chuỗi thành chữ hoa
+            //slice nối chuỗi
+            a[i] = word;
+        }
+        let result = a.join(" ");
+        // join làm dấu phân cách đẻ ghép các phần tử trong mảng
+        return result;
+    }
+
+    function timTuDaiNhat(str) {
+        let b = str.split(" ");
+        let tuDaiNhat = " ";
+        for(let i = 0; i < b.length; i++) {
+            if(b[i].length > tuDaiNhat.length) {
+                tuDaiNhat = b[i];
+            }
+        }
+        return tuDaiNhat;
+    }
+
+
+</script>
+</body>
+</html>
