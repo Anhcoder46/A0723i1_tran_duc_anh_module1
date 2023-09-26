@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let str1 = prompt("Nhập vào chuỗi str1:");
+    let str2 = prompt("Nhập vào chuỗi str2:");
+    let diffstr1 = [];
+    let diffstr2 = [];
+    let count = 1;
+    let count2 = 0;
+    let flag;
+    let commStr = [];
+    document.write("String1: " + str1 + "<br>");
+    document.write("String2: " + str2 + "<br>");
+    commonCharacterCount(str1, str2);
+    function commonCharacterCount(s1, s2) {
+        for( let i = 0; i < s1.length; i++) {
+            for (let j = 0; j < s2.length; j++) {
+
+                if( s1[i] === s2[j]) {
+                    flag = true;
+                    break;
+                } else {
+                    flag = false;
+                }
+            }
+            if( flag===true) {
+                count2++;
+                commStr.push(s1[i]);
+            }
+        }
+        document.write( "Hai chuỗi có " + count2 + " ký tự chung là : " + commStr);
+    }
+</script>
+
+</body>
+</html>
