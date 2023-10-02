@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý học viên</title>
+</head>
+<body>
+<div>
+    <button onclick="addNewStudent()">Thêm mới hoc viên</button>
+    <button onclick="updateStudent()">Sửa thông tin học viên</button>
+    <button onclick="delStudent()">Xóa học viên</button>
+    <button onclick="saveUpdate()">Lưu</button><br><br>
+    <input type="text" placeholder="Mã học viên" id="studentID"><br>
+    <input type="text" placeholder="Tên học viên" id="name"><br>
+    <input type="text" placeholder="Lớp" id="class"><br>
+    <input type="text" placeholder="Email" id="mail"><br>
+    <input type="date" placeholder="Ngày sinh" id="dob"><br>
+    <input type="text" placeholder="Module(1-6)" id="module"><br><br>
+</div>
+<div id="studentList"></div>;
+<script>
+    class Student {
+        constructor(studentID, name, classes, email, dayOfBirth, module) {
+            this._studentID = studentID;
+            this._name = name;
+            this._classes = classes;
+            this._email = email;
+            this._dayOfBirth = dayOfBirth;
+            this._module = module;
+        }
+
+        get studentID() {
+            return this._studentID;
+        }
+
+        set studentID(value) {
+            this._studentID = value;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get classes() {
+            return this._classes;
+        }
+
+        set classes(value) {
+            this._classes = value;
+        }
+
+        get email() {
+            return this._email;
+        }
+
+        set email(value) {
+            this._email = value;
+        }
+
+        get dayOfBirth() {
+            return this._dayOfBirth;
+        }
+
+        set dayOfBirth(value) {
+            this._dayOfBirth = value;
+        }
+
+        get module() {
+            return this._module;
+        }
+
+        set module(value) {
+            this._module = value;
+        }
+    }
+    let studentArr=[];
+    let student1= new Student( "HV-0001", "Trần Đức Anh", "C0723L1-JV105", "tranducanh@gmail.com", "16-05-2004", "Module1");
+    let student2= new Student( "HV-0002", "Nguyễn Thị Nở", "C0723L1-JV105", "nguyenthino@gmail.com", "25-05-1998", "Module1");
+    let student3= new Student( "HV-0003", "Trần Chí Phèo", "C0723L1-JV105", "tranchipheo@gmail.com", "25-01-2003", "Module1");
+    let student4= new Student( "HV-0004", "Giàng A Lử", "C0723L1-JV105", "giangalu@gmail.com", "15-05-2002", "Module1");
+    let student5= new Student( "HV-0005", "Tiểu Huyền Tử", "C0723L1-JV105", "tieuhuyentu@gmail.com", "25-05-2006", "Module1");
+    studentArr.push(student1);
+    studentArr.push(student2);
+    studentArr.push(student3);
+    studentArr.push(student4);
+    studentArr.push(student5);
+
+    showStudentlist(studentArr);
+    function showStudentlist(list) {
+        let strTable = "<table border='1' style='border-collapse: collapse'>";
+        strTable += " <tr>" +
+            "<th>ID</th>" +
+            "<th>Name</th>" +
+            "<th>Class</th>" +
+            "<th>Email</th>" +
+            "<th>DOB</th>" +
+            "<th>Module</th>" +
+            "</tr>";
+        for( let i = 0; i < list.length;i++) {
+            strTable+="<tr>"+
+                "<td>" +list[i]._studentID + "</td>" +
+                "<td>" +list[i]._name + "</td>" +
+                "<td>" +list[i]._classes + "</td>" +
+                "<td>" +list[i]._email + "</td>" +
+                "<td>" +list[i]._dayOfBirth + "</td>" +
+                "<td>" +list[i]._module + "</td>" +
+                "</tr>"
+        }
+        strTable += "</table>";
+        document.getElementById("studentList").innerHTML= strTable;
+
+    }
+    function addNewStudent() {
+        let studentID = document.getElementById("studentID").value;
+        let name = document.getElementById("name").value;
+        let classs = document.getElementById("class").value;
+        let mail = document.getElementById("mail").value;
+        let date = document.getElementById("dob").value;
+        let module = document.getElementById("module").value;
+        for(let i = 0; i < studentArr.length; i++) {
+            if(studentID == "" || name == "" || classs == "" || mail == "" || date == "" || module == "") {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                showStudentlist();
+            }
+            if(studentID == studentArr[i]._studentID) {
+                alert("Mã học viên đã tồn tại. Vui lòng nhập mã khác.");
+                showStudentlist();
+            }
+        }
+
+        let newStudent = new Student(studentID, name, classs, mail, date, module);
+        studentArr.push(newStudent);
+        showStudentlist(studentArr);
+
+
+        document.getElementById("studentID").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("class").value = "";
+        document.getElementById("mail").value = "";
+        document.getElementById("dob").value = "";
+        document.getElementById("module").value = "";
+    }
+    function delStudent() {
+        let flag;
+        let index;
+        let delID = prompt("Nhập mã học viên cần xóa: ");
+        for( let i = 0; i < studentArr.length; i++) {
+            if( studentArr[i]._studentID === delID) {
+                flag = true;
+                index = i;
+                break;
+            } else {
+                flag = false;
+            }
+        }
+        if( flag === true) {
+            let choice = confirm("Bạn chắc chắn muốn xóa?");
+            if( choice === true) {
+                studentArr.splice(index, 1);
+                showStudentlist(studentArr);
+            } else {
+                showStudentlist(studentArr);
+            }
+
+        } else {
+            document.write("Không tìm thấy học viên trong danh sách!");
+        }
+
+    }
+
+    let studentUpdating;
+    function updateStudent() {
+        let flag;
+        let index;
+        let id = prompt("Nhập mã học viên cần cập nhập thông tin: ");
+        for (let i = 0; i < studentArr.length; i++) {
+            if (id === studentArr[i]._studentID) {
+                flag = true;
+                index = i;
+            }
+            if (flag === true) {
+                document.getElementById("studentID").value = studentArr[index]._studentID;
+                document.getElementById("name").value = studentArr[index]._name;
+                document.getElementById("class").value = studentArr[index]._classes;
+                document.getElementById("mail").value = studentArr[index]._email;
+                document.getElementById("dob").value = studentArr[index]._dayOfBirth;
+                document.getElementById("module").value = studentArr[index]._module;
+            } else {
+                alert("Không tìm thấy học viên trong danh sách!");
+                showStudentlist();
+                studentUpdating = studentArr[index];
+            }
+        }
+    }
+
+
+    function saveUpdate() {
+        alert("Saved!");
+        let id = document.getElementById("studentID").value;
+        let name = document.getElementById("name").value;
+        let classs = document.getElementById("class").value;
+        let mail = document.getElementById("mail").value;
+        let birthday = document.getElementById("dob").value;
+        let module = document.getElementById("module").value;
+
+        studentUpdating._studentID = id;
+        studentUpdating._name = name;
+        studentUpdating._classes = classs;
+        studentUpdating._email = mail;
+        studentUpdating._dayOfBirth = birthday;
+        studentUpdating._module = module;
+        showStudentlist(studentArr);
+
+        document.getElementById("studentID").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("class").value = "";
+        document.getElementById("mail").value = "";
+        document.getElementById("dob").value = "";
+        document.getElementById("module").value = "";
+
+    }
+</script>
+</body>
+</html>
