@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu chuyện Adam and Eva</title>
+</head>
+<body>
+<h1>Câu chuyện Adam Và Eva</h1>
+<hr>
+<div id="human">
+    <table>
+        <tr>
+            <td>Tên :</td>
+            <td><input type="text" id="name1"></td>
+            <td><input type="text" id="name2"></td>
+        </tr>
+        <tr>
+            <td>Giới tính :</td>
+            <td><input type="text" id="gender1"></td>
+            <td><input type="text" id="gender2"></td>
+        </tr>
+        <tr>
+            <td>Cân nặng :</td>
+            <td><input type="text" id="weight1"></td>
+            <td><input type="text" id="weight2"></td>
+        </tr>
+        <tr>
+            <td>Chức năng :</td>
+            <td><button onclick="adamAn()">Adam ăn táo</button></td>
+            <td><button onclick="evaAn()">Eva ăn táo</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="adamHai()">Adam Hái táo</button></td>
+            <td><button onclick="evaHai()">Eva Hái táo</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="say1()">Nói</button></td>
+            <td><button onclick="say2()">Nói</button></td>
+        </tr>
+    </table>
+</div>
+<div>
+    <table>
+        <tr>
+            <td>Khối lượng :</td>
+            <td><input type="number" id="apple1"></td>
+        </tr>
+    </table>
+</div>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        reApple () {
+            return this.weight = 10;
+        }
+
+        decrease () {
+            return this.weight -=1;
+        }
+
+        isEmpty () {
+            if (this.weight <= 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+        getWeight () {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setWeight() {
+            return this.weight += 1;
+        }
+
+        say() {
+            return alert(this.name + ' Xin chào bạn');
+        }
+    }
+
+    let apple = new Apple(10);
+    document.getElementById('apple1').value = apple.getWeight();
+
+    let adam = new Human('Adam','male',80);
+    document.getElementById('name1').value = adam.getName();
+    document.getElementById('gender1').value = adam.getGender();
+    document.getElementById('weight1').value = adam.getWeight();
+
+    let eva = new Human('Eva','female',60);
+    document.getElementById('name2').value = eva.getName();
+    document.getElementById('gender2').value = eva.getGender();
+    document.getElementById('weight2').value = eva.getWeight();
+
+    function adamAn() {
+        if ((apple.isEmpty()) == false) {
+            apple.getWeight();
+            document.getElementById('weight1').value = adam.getWeight();
+            alert('Hết táo');
+        } else {
+            document.getElementById('weight1').value = adam.setWeight();
+            document.getElementById('apple1').value = apple.decrease();
+        }
+    }
+    function evaAn() {
+        if ((apple.isEmpty()) == false) {
+            apple.getWeight();
+            document.getElementById('weight2').value = eva.getWeight();
+            alert('Hết táo');
+        } else {
+            document.getElementById('weight2').value = eva.setWeight();
+            document.getElementById('apple1').value = apple.decrease();
+        }
+    }
+    function adamHai() {
+        document.getElementById('apple1').value = apple.reApple();
+    }
+    function evaHai() {
+        document.getElementById('apple1').value = apple.reApple();
+    }
+    function say1() {
+        adam.say();
+    }
+    function say2() {
+        eva.say();
+    }
+
+</script>
+</body>
+</html>
